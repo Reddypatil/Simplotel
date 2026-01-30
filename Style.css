@@ -1,116 +1,97 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #eef6fb;
+  background: #eef6fb;
 }
 
-/* Navbar */
+/* ---------- NAVBAR ---------- */
 .navbar {
-  background-color: #8c8c8c;
-  padding: 1rem;
+  background: #8b8b8b;
+  padding: 15px;
 }
 
-.navbar ul {
+.nav-list {
+  list-style: none;
   display: flex;
   justify-content: center;
-  list-style: none;
-  gap: 2rem;
+  gap: 40px;
 }
 
-.navbar li {
-  color: #ffffff;
+.nav-list li {
+  color: white;
   cursor: pointer;
+  font-size: 16px;
 }
 
-.navbar .active {
-  color: #ffff00;
+.nav-list li.active {
+  color: yellow;
 }
 
-/* Layout */
+/* ---------- MAIN LAYOUT ---------- */
 .container {
-  display: flex;
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1400px;
-  margin: auto;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 30px;
 }
 
-/* Images */
-.images {
-  display: flex;
-  gap: 1.5rem;
-  flex: 1;
-}
-
-.images img {
+.image-box img {
   width: 100%;
-  max-width: 350px;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 
-/* Content Panel */
-.content-panel {
-  flex: 1;
-  background-color: #ff8555;
+/* ---------- ORANGE SECTION ---------- */
+.orange-box {
+  background: #ff8354;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 2rem;
+  align-items: center;
 }
 
-.content-box {
-  background-color: #8a8a8a;
+.card {
+  background: #8b8b8b;
   color: white;
-  padding: 2rem;
-  max-width: 350px;
+  padding: 25px;
+  width: 320px;
 }
 
-.content-box h2 {
-  margin-bottom: 1rem;
+.card h2 {
+  margin-bottom: 10px;
 }
 
-.content-box p {
-  margin-bottom: 1rem;
-  line-height: 1.5;
+.card p {
+  margin-bottom: 15px;
 }
 
-.content-box button {
-  padding: 0.5rem 1rem;
+.card button {
+  padding: 6px 14px;
   border: none;
   cursor: pointer;
 }
 
-/* Tablet */
-@media (max-width: 1024px) {
-  .container {
+/* ---------- MOBILE VIEW ---------- */
+@media (max-width: 768px) {
+  .nav-list {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
   }
 
-  .images {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .navbar ul {
-    flex-wrap: wrap;
-    gap: 1rem;
+  .container {
+    grid-template-columns: 1fr;
   }
 
-  .images img {
-    max-width: 100%;
+  .orange-box {
+    padding: 20px;
   }
 
-  .content-box {
+  .card {
     width: 100%;
   }
 }
